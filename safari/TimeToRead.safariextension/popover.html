@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+   <head>
+  <style type="text/css">
+  </style>
+    <script type="text/javascript" charset="utf-8">
+            function estimateTime(msg) {
+                document.getElementById("estimatedTime").innerText = "A ~ " + msg.message.estimatedTime + " minute read";
+                document.getElementById("wordCount").innerText = msg.message.wordCount + " words";
+            }
+
+    </script>
+   </head>
+   <body>
+        <p id="estimatedTime"></p>
+        <p id="wordCount"></p>
+   </body>
+</html>
