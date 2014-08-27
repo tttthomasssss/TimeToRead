@@ -79,6 +79,8 @@
 			<string>All</string>
 		</dict>
 	</dict>
+	<key>Update Manifest URL</key>
+	<string>https://github.com/tttthomasssss/TimeToRead/blob/master/safari/TimeToRead.safariextension/update.plist</string>
 	<key>Website</key>
 	<string>https://github.com/tttthomasssss/TimeToRead</string>
 </dict>

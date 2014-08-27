@@ -4,6 +4,9 @@
 	// Set up the Listeners
 	safari.application.addEventListener("message", handleMessage, false);
 	safari.application.addEventListener("activate", handleActivate, true);
+	safari.application.addEventListener("navigate", handleNavigate, true);
+
+	window.addEventListener("load", handleLoaded);
 
 	// Create popover instance
 	const gui = safari.extension.popovers[0].contentWindow
@@ -18,6 +21,16 @@
 
 	// Activate Handling
 	function handleActivate(event) {
+		safari.application.activeBrowserWindow.activeTab.page.dispatchMessage("kickstartMyHeart", true);
+	}
+
+	// Navigate Handling
+	function handleNavigate(event) {
+		safari.application.activeBrowserWindow.activeTab.page.dispatchMessage("kickstartMyHeart", true);
+	}
+
+	// Handle Window Event
+	function handleLoaded() {
 		safari.application.activeBrowserWindow.activeTab.page.dispatchMessage("kickstartMyHeart", true);
 	}
 

@@ -3,6 +3,7 @@ safari.self.addEventListener("message", handleMessage, false);
 function handleMessage(msg) {
 
 	if (msg.name == "kickstartMyHeart") {
+
 		var wordCount = document.body.innerText.replace(/<(?:.|\n)*?>/gm, "").match(/\S+/g).length;
 		//var wordCount = document.body.innerText.match(/\S+/g).length;
 
