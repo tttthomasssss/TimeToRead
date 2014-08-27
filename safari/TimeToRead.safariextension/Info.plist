@@ -13,9 +13,9 @@
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleShortVersionString</key>
-	<string>0.1</string>
+	<string>0.2</string>
 	<key>CFBundleVersion</key>
-	<string>1</string>
+	<string>5</string>
 	<key>Chrome</key>
 	<dict>
 		<key>Global Page</key>
@@ -26,11 +26,11 @@
 				<key>Filename</key>
 				<string>popover.html</string>
 				<key>Height</key>
-				<real>100</real>
+				<real>65</real>
 				<key>Identifier</key>
 				<string>popoverTimeToRead</string>
 				<key>Width</key>
-				<real>200</real>
+				<real>180</real>
 			</dict>
 		</array>
 		<key>Toolbar Items</key>
@@ -79,5 +79,7 @@
 			<string>All</string>
 		</dict>
 	</dict>
+	<key>Website</key>
+	<string>https://github.com/tttthomasssss/TimeToRead</string>
 </dict>
 </plist>

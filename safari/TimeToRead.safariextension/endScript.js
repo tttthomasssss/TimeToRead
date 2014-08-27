@@ -1,14 +1,16 @@
-//safari.application.activeBrowserWindow.activeTab.page.dispatchMessage("execute", "engage");
-window.addEventListener("load", onDocLoad);
+safari.self.addEventListener("message", handleMessage, false);
 
-function onDocLoad()
-{
-	var wordCount = document.body.innerText.replace(/<(?:.|\n)*?>/gm, "").match(/\S+/g).length;
+function handleMessage(msg) {
 
-	msg = new Object();
+	if (msg.name == "kickstartMyHeart") {
+		var wordCount = document.body.innerText.replace(/<(?:.|\n)*?>/gm, "").match(/\S+/g).length;
+		//var wordCount = document.body.innerText.match(/\S+/g).length;
 
-	msg.wordCount = wordCount;
-	msg.estimatedTime = Math.max(Math.floor(wordCount / 250), 1);
+		msg = new Object();
 
-    safari.self.tab.dispatchMessage("estimatedTime", msg);
+		msg.wordCount = wordCount;
+		msg.estimatedTime = Math.max(Math.floor(wordCount / 250), 1);
+
+    	safari.self.tab.dispatchMessage("estimatedTime", msg);
+	}
 }

@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 
 <script>
-	// Set up the Listener
-	//safari.application.addEventListener("command", performCommand, false);
+	// Set up the Listeners
 	safari.application.addEventListener("message", handleMessage, false);
-
+	safari.application.addEventListener("activate", handleActivate, true);
 
 	// http://www.walid.tn/browser-extension-development/a-step-by-step-tutorial-on-building-your-own-safari-extension-part-2.html
 	// http://stackoverflow.com/questions/4965244/popups-in-a-safari-extension
@@ -17,13 +16,8 @@
 
 	}
 
-	// Function to perform when event is received
-	//function performCommand(event) {
-	//	// Make sure event comes from the button
-    //	if (event.command == "estimateTimeToRead") {
-	//		var pageContent = safari.application.activeBrowserWindow.activeTab.page; // Open a new tab
-	//		alert(wordCount);
-    //	}
-	//}
+	function handleActivate(event) {
+		safari.application.activeBrowserWindow.activeTab.page.dispatchMessage("kickstartMyHeart", true);
+	}
 
 </script>
